@@ -1,0 +1,9 @@
+#ifndef PATHFINDER_CPP_DIVINITY_HPP
+#define PATHFINDER_CPP_DIVINITY_HPP
+
+class Divinity
+{
+
+};
+
+#endif //PATHFINDER_CPP_DIVINITY_HPP
