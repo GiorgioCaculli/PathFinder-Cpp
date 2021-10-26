@@ -27,11 +27,11 @@ Race::Race( const Race &race )
           , _eye_color( race.get_eye_color() )
           , _birth_place( race.get_birth_place() )
           , _birth_date( race.get_birth_date() )
-{}
+{ }
 
 Race &Race::operator=( const Race &race )
 {
-    if( &race == this )
+    if ( &race == this )
     {
         _gender = race.is_male();
         _age = race.get_age();
