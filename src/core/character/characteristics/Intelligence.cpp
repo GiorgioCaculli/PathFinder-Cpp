@@ -3,19 +3,19 @@
 using namespace pathfinder::core::character::characteristics;
 
 Intelligence::Intelligence( short value )
-: Characteristic( INTELLIGENCE, value )
+        : Characteristic( INTELLIGENCE, value )
 {
     set_name( "Intelligence" );
 }
 
 Intelligence::Intelligence( const Intelligence &intelligence )
-: Intelligence( intelligence.get_value() )
+        : Intelligence( intelligence.get_value() )
 {
 }
 
 Intelligence &Intelligence::operator=( const Intelligence &intelligence )
 {
-    if( &intelligence != this )
+    if ( &intelligence != this )
     {
         Characteristic::operator=( intelligence );
     }

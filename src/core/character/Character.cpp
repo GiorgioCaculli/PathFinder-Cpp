@@ -5,11 +5,11 @@
 using namespace pathfinder::core::character;
 
 Character::Character( std::string name, bool gender, int age, race::SkinTone skin_tone, float height, float weight, race::Color hair_color, race::Color eye_color, const std::string &birth_place, const std::string &birth_date, std::string alignment )
-: Race( gender, age, skin_tone, height, weight, hair_color, eye_color, birth_place, birth_date )
-, _experience( 0 )
-, _name( std::move( name ) )
-, _alignment( std::move( alignment ) )
-, _characteristics()
+        : Race( gender, age, skin_tone, height, weight, hair_color, eye_color, birth_place, birth_date )
+          , _experience( 0 )
+          , _name( std::move( name ) )
+          , _alignment( std::move( alignment ) )
+          , _characteristics()
 {
 }
 
@@ -59,9 +59,9 @@ std::ostream &pathfinder::core::character::operator<<( std::ostream &os,
     os <<
        "name: " << character._name << std::endl <<
        static_cast< const race::Race & >( character ) << std::endl <<
-       " alignment: " << character._alignment << std::endl <<
-       " experience: " << character._experience << std::endl;
-    for( characteristics::Characteristic *characteristic : character._characteristics )
+       "alignment: " << character._alignment << std::endl <<
+       "experience: " << character._experience << std::endl;
+    for ( characteristics::Characteristic *characteristic: character._characteristics )
     {
         os << characteristic->get_name() << " : " << characteristic->get_value() << std::endl;
     }

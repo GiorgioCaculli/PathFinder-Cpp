@@ -5,22 +5,22 @@
 using namespace pathfinder::core::character::characteristics;
 
 Characteristic::Characteristic( Characteristic::ID id, short value )
-: _id( id )
-, _name()
-  , _value( value )
-  , _modifier( floor( _value - 10. / 2. ) )
-  , _temp_value( 0 )
+        : _id( id )
+          , _name()
+          , _value( value )
+          , _modifier( floor( _value - 10. / 2. ) )
+          , _temp_value( 0 )
 {
 }
 
 Characteristic::Characteristic( const Characteristic &characteristic )
-: Characteristic( characteristic._id, characteristic._value )
+        : Characteristic( characteristic._id, characteristic._value )
 {
 }
 
 Characteristic &Characteristic::operator=( const Characteristic &characteristic )
 {
-    if( &characteristic != this )
+    if ( &characteristic != this )
     {
         _id = characteristic._id;
         _name = characteristic._name;

@@ -3,19 +3,19 @@
 using namespace pathfinder::core::character::characteristics;
 
 Dexterity::Dexterity( short value )
-: Characteristic( DEXTERITY, value )
+        : Characteristic( DEXTERITY, value )
 {
     set_name( "Dexterity" );
 }
 
 Dexterity::Dexterity( const Dexterity &dexterity )
-: Dexterity( dexterity.get_value() )
+        : Dexterity( dexterity.get_value() )
 {
 }
 
 Dexterity &Dexterity::operator=( const Dexterity &dexterity )
 {
-    if( &dexterity != this )
+    if ( &dexterity != this )
     {
         Characteristic::operator=( dexterity );
     }

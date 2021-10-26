@@ -34,8 +34,6 @@ int main( int argc, char *argv[] )
             "April",
             "Loyal" );
 
-    std::array< characteristics::Characteristic*, characteristics::Characteristic::CHARACTERISTICS_COUNT > characteristics;
-
     auto *force = new characteristics::Force( 10 );
     auto *dexterity = new characteristics::Dexterity( 11 );
     auto *constitution = new characteristics::Constitution( 12 );
@@ -43,14 +41,9 @@ int main( int argc, char *argv[] )
     auto *wisdom = new characteristics::Wisdom( 14 );
     auto *charisma = new characteristics::Charisma( 15 );
 
-    characteristics =
+    std::array< characteristics::Characteristic *, characteristics::Characteristic::CHARACTERISTICS_COUNT > characteristics =
             {
-            force,
-            dexterity,
-            constitution,
-            intelligence,
-            wisdom,
-            charisma
+                    force, dexterity, constitution, intelligence, wisdom, charisma
             };
 
     character.set_characteristics( characteristics );
@@ -62,7 +55,7 @@ int main( int argc, char *argv[] )
     mf.show();
     res = app.exec();
 
-    for( characteristics::Characteristic *characteristic : characteristics )
+    for ( characteristics::Characteristic *characteristic: characteristics )
     {
         delete characteristic;
     }
