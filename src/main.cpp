@@ -1,22 +1,28 @@
 #include <iostream>
 
 #include "main.hpp"
-#include "core/character/race/Elf.hpp"
 #include "ui/gui/MainFrame.hpp"
-#include "core/character/characteristics/Force.hpp"
-#include "core/character/characteristics/Dexterity.hpp"
-#include "core/character/characteristics/Constitution.hpp"
-#include "core/character/characteristics/Intelligence.hpp"
-#include "core/character/characteristics/Wisdom.hpp"
-#include "core/character/characteristics/Charisma.hpp"
+#include <core/character/race/Elf.hpp>
+#include <core/character/characteristics/Force.hpp>
+#include <core/character/characteristics/Dexterity.hpp>
+#include <core/character/characteristics/Constitution.hpp>
+#include <core/character/characteristics/Intelligence.hpp>
+#include <core/character/characteristics/Wisdom.hpp>
+#include <core/character/characteristics/Charisma.hpp>
 
 #include <QApplication>
 
-using namespace pathfinder::core::character;
+using namespace rpg::character;
 using namespace pathfinder::ui::gui;
 
 int main( int argc, char *argv[] )
 {
+    std::cout << "Calling: ";
+    for( int i = 0; i < argc; i++ )
+    {
+        std::cout << argv[ i ];
+    }
+    std::cout << std::endl;
     std::cout << "Hello, World!" << std::endl;
 
     int res = 0;
@@ -48,12 +54,12 @@ int main( int argc, char *argv[] )
 
     character.set_characteristics( characteristics );
 
-    std::cout << character << std::endl;
+    std::cout << character.to_string() << std::endl;
 
     QApplication app( argc, argv );
     MainFrame mf;
     mf.show();
-    res = app.exec();
+    res = QApplication::exec();
 
     for ( characteristics::Characteristic *characteristic: characteristics )
     {
